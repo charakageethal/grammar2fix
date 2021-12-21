@@ -112,12 +112,10 @@ class DFA:
 		state=self.__start
 
 		for chr in input_str:
-			#print(chr+":"+state.name)
 			state=state.move(chr)
 
 			if(state is None):
 				return False
-		#print(chr+":."+state.name)
 
 		if (state.isFinal()):
 			return True
@@ -127,9 +125,6 @@ class DFA:
 	def getAcceptingFinalState(self,input_str):
 
 		state=self.__start
-
-		#print(state.name)
-		#print(input_str)
 
 		for chr in input_str:
 			#print("chr:"+chr)
@@ -150,9 +145,7 @@ class DFA:
 
 	@classmethod
 	def rpni_fold(cls,first_state,second_state):
-		
-		#print("f1:"+str(first_state.getTransitions())+" f2:"+str(second_state.getTransitions()))
-
+	
 		second_state_trans=second_state.getTransitions()
 
 		if(second_state_trans is not None):
@@ -220,6 +213,7 @@ class DFA:
 
 
 	@classmethod
+	#Perform modified RPNI merge
 	def conv_rpni_merge(cls,init_dfa,neg_samples,f_min):
 		
 		further_merge=True
@@ -232,17 +226,11 @@ class DFA:
 			state_list=dfa.get_state_list()
 			start_state=dfa.get_start_state()
 
-			#print("b"+str(state_list.keys()))
-
 			for st_name in state_list.keys():
 
-				#state=state_list[st_name]
-				#print("name:"+state.name)
-				#state_trans=state.getTransitions()
 				dup_dfa=copy.deepcopy(dfa)
 				dup_state_list=dup_dfa.get_state_list()
 				dup_state=dup_state_list[st_name]
-				#state=state_list[st_name]
 				state_trans=copy.deepcopy(dup_state.getTransitions())
 
 				if(state_trans is not None):
@@ -268,9 +256,6 @@ class DFA:
 
 						new_states.sort()
 
-						#print("N:"+str(new_states))
-
-
 						new_state_list={}
 
 						for st_name in new_states:
@@ -281,8 +266,6 @@ class DFA:
 						new_dfa.set_start_state(dup_state_list["S"])
 						new_dfa.set_state_list(new_state_list)
 
-						#print(dup_dfa.get_state_list())
-
 						if(cls.isAllNegativeFail(dup_dfa,neg_samples)):
 							dfa=new_dfa
 							found_new_dfa=True
@@ -291,7 +274,6 @@ class DFA:
 					continue
 
 				if(found_new_dfa):
-					#print("New 1:"+str(dfa.get_state_list()))
 					break
 
 			if(not found_new_dfa):
@@ -299,6 +281,3 @@ class DFA:
 	
 		return dfa
 
-
-
-#print(n_dfa.isAccepting("tron_neu"))
