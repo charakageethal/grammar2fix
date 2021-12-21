@@ -9,11 +9,8 @@ class DFA:
 
 
 	def gen_dfa(self,input_str_list):
-
 		for input_str in input_str_list:
-
 			if(self.__start.getTransitions() is None):
-
 				q1=State("q1")
 				self.__start.setTransitions({input_str[0]:q1})
 				self.__state_list["q1"]=q1
@@ -36,13 +33,9 @@ class DFA:
 						n_i+=1
 				else:
 					q1.setFinal(True)
-
-
 			else:
 				curr_state=self.__start
-
 				no_states=False
-
 				last_state_n=int(list(self.__state_list.keys())[-1][1:])
 
 
@@ -62,24 +55,17 @@ class DFA:
 					input_chr_idx+=1
 
 				if(no_states):
-
 					remain_str=input_str[input_chr_idx:]
-
 					n_i=last_state_n
 				
 					for chr in remain_str:
-
 						state_name="q"+str(n_i+1)
-
 
 						if(input_chr_idx==len(input_str)-1):
 							n_state=State(state_name,isFinal=True)
 						else:
 							n_state=State(state_name)
 						
-						#self.__state_list["q"+str(n_i)].setTransitions({chr:n_state})
-
-
 						state_transitions=prev_state.getTransitions()
 
 						if(state_transitions is not None):
@@ -127,15 +113,11 @@ class DFA:
 		state=self.__start
 
 		for chr in input_str:
-			#print("chr:"+chr)
-
 			state=state.move(chr)
-			#print(state.name)
 
 			if(state is None):
 				return None
-
-
+				
 		if(state.isFinal()):
 			return state
 		else:
