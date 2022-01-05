@@ -127,27 +127,20 @@ class DFA:
 
 	@classmethod
 	def rpni_fold(cls,first_state,second_state):
-	
 		second_state_trans=second_state.getTransitions()
-
 		if(second_state_trans is not None):
 
 			for s_key in second_state_trans.keys():
-
 				first_state_trans=first_state.getTransitions()
-
 				if( (first_state_trans is not None) and (s_key in first_state_trans.keys())):
-
 
 					if(second_state.isFinal()):
 						first_state.setFinal(True)
-
 
 					if((first_state_trans[s_key]=="self") and (second_state_trans[s_key]=="self")):
 						continue
 
 					cls.rpni_fold(first_state.move(s_key),second_state.move(s_key))
-
 				else:
 					first_state_trans=first_state.getTransitions()
 					if(first_state_trans is None):

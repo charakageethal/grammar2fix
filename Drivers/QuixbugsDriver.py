@@ -4,9 +4,6 @@ import re
 import copy
 import time
 import json
-import trace
-from Coverage import Coverage
-
 
 class QuixbugsDriver:
 
@@ -15,6 +12,9 @@ class QuixbugsDriver:
 		sys.path.insert(0, self.__bug_path)
 		self.__module_correct=None
 		self.__module_incorrect=None
+		self.__n_human_labelled=0
+		self.__human_labelled_passing=[]
+		self.__human_labelled_failing=[]
 
 
 	def run_test(self,algo,*args,correct=False):
@@ -57,12 +57,28 @@ class QuixbugsDriver:
 		return py_test_case_list
 
 	def ask_human(self,test_input,algo):
-	    buggy_output=self.run_test(algo,*copy.deepcopy(test_input))
-	    golden_output=self.run_test(algo,*copy.deepcopy(test_input),correct=True)
-	    
-	    if(buggy_output==golden_output):
-	        return True
-	    else:
-	        return False
+		if(test_input in self.__human_labelled_passing):
+			return True
+		elif(test_input in self.__human_labelled_failing):
+			return False
+		else:
+			self.__n_human_labelled+=1
+			buggy_output=self.run_test(algo,*copy.deepcopy(test_input))
+			golden_output=self.run_test(algo,*copy.deepcopy(test_input),correct=True)
+			if(buggy_output==golden_output):
+				if (test_input not in self.__human_labelled_passing):
+					self.__human_labelled_passing.append(test_input)
+				return True
+			else:
+				if(test_input not in self.__human_labelled_failing):
+					self.__human_labelled_failing.append(test_input)
+				return False
 
+	def get_human_labelled(self):
+		return self.__n_human_labelled,self.__human_labelled_passing,self.__human_labelled_failing
+
+	def set_human_labelled_zero(self):
+		self.__n_human_labelled=0
+		self.__human_labelled_passing=[]
+		self.__human_labelled_failing=[]
 
