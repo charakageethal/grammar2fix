@@ -163,9 +163,7 @@ class DeltaMinimize:
 		self.__failing_test_cases=[]		
 
 		char_index_list=[i for i in range(len(failure_input))]
-
 		minimized_indexes=self.__flattern_failure_minimized(self.__ddmin([char_index_list],failure_input))
-
 		minimized_failure_string=self.__get_string(failure_input,minimized_indexes)
 
 		return minimized_failure_string,self.__passing_test_cases,self.__failing_test_cases

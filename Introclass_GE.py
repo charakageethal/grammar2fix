@@ -1,14 +1,15 @@
 import sys
 sys.path.insert(0,"DFA_Grammar")
 sys.path.insert(0,"Drivers")
+sys.path.insert(0,"Utils")
 
 from DFA_Grammar.State import State
 from Drivers.IntroClassDriver import IntroClassDriver
-from DeltaMinimize import DeltaMinimize
-from CharacterFuzz import CharacterFuzz
+from Utils.DeltaMinimize import DeltaMinimize
+from Utils.HSCFuzzer import HSCFuzzer
+from Utils.CharacterFuzz import CharacterFuzz
 from DFA_Grammar.DFA import DFA
 from DFA_Grammar.DFAparser import DFAparser
-from HSCFuzzer import HSCFuzzer
 import numpy as np
 import collections
 from string import printable
@@ -18,7 +19,6 @@ import random
 import subprocess
 import string
 import copy
-
 
 parser=argparse.ArgumentParser()
 parser.add_argument("-s","--subject",help="path to buggy subjects",required=True)

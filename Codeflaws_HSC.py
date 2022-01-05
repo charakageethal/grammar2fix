@@ -1,14 +1,14 @@
 import sys
 sys.path.insert(0,"DFA_Grammar")
 sys.path.insert(0,"Drivers")
+sys.path.insert(0,"Utils")
 
 from DFA_Grammar.State import State
 from Drivers.CodeflawsDriver import CodeflawsDriver
-from DeltaMinimize import DeltaMinimize
-from CharacterFuzz import CharacterFuzz
+from Utils.DeltaMinimize import DeltaMinimize
+from Utils.HSCFuzzer import HSCFuzzer
 from DFA_Grammar.DFA import DFA
 from DFA_Grammar.DFAparser import DFAparser
-from HSCFuzzer import HSCFuzzer
 import numpy as np
 import collections
 from string import printable
