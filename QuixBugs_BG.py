@@ -31,6 +31,7 @@ bug_path=args.path
 debug=args.debug
 buggy_subject=args.subject
 
+multiple_inputs=False
 q_driver=QuixbugsDriver(bug_path)
 prog_name=buggy_subject
 
