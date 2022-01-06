@@ -83,8 +83,15 @@ class HSCFuzzer:
 
 			elif(t_case_label_1==False):
 				fmin_char=list(collections.Counter(fmin_rand_suffix).keys())
-				for i_chr in range(1,len(fmin_char)+1):
-					new_transitions["all_fmin"+str(i_chr)]="self"
+				if(len(fmin_char)==1):
+					new_transitions["all_fmin1"]="self"
+				else:
+					start_state_trans=dfa_state_list["S"].getTransitions()
+					for i_chr in range(1,len(fmin_char)+1):
+						if("all_fmin"+str(i_chr) in start_state_trans.keys()):
+							new_transitions["all_fmin"+str(i_chr)]=start_state_trans["all_fmin"+str(i_chr)]
+							break
+
 
 			if(len(new_transitions)>0):
 				dfa_state_list[final_no_key].setTransitions(new_transitions)
