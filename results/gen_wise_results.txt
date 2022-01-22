@@ -1,0 +1,45 @@
+> 
+> print(paste("GI-Average/Median Overall Prediction Accuracy :",mean(subset(oracle_quality,gen_level=="GI" & variable=="Overall")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GI" & variable=="Overall")$value,na.rm = TRUE)))
+[1] "GI-Average/Median Overall Prediction Accuracy : 0.63006660533656 0.6"
+> print(paste("GI-Average/Median Failing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="GI" & variable=="Failing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GI" & variable=="Failing")$value,na.rm = TRUE)))
+[1] "GI-Average/Median Failing Conditional Accuracy : 0.237211388545149 0.169196428571429"
+> print(paste("GI-Average/Median Passing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="GI" & variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GI" & variable=="Passing")$value,na.rm = TRUE)))
+[1] "GI-Average/Median Passing Conditional Accuracy : 0.999460196861635 1"
+> print(paste("GI-Average/Median Labelling Effort :",mean(subset(labelling_effort,gen_level=="GI" & variable=="No. Labels")$number,na.rm=TRUE),median(subset(labelling_effort,gen_level=="GI" & variable=="No. Labels")$number,na.rm = TRUE)))
+[1] "GI-Average/Median Labelling Effort : 17.1801153371399 10.296875"
+> 
+> print(paste("BG-Average/Median Overall Prediction Accuracy :",mean(subset(oracle_quality,gen_level=="BG" & variable=="Overall")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="BG" & variable=="Overall")$value,na.rm = TRUE)))
+[1] "BG-Average/Median Overall Prediction Accuracy : 0.637737718521243 0.61039062539499"
+> print(paste("BG-Average/Median Failing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="BG" & variable=="Failing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="BG" & variable=="Failing")$value,na.rm = TRUE)))
+[1] "BG-Average/Median Failing Conditional Accuracy : 0.287710241809992 0.2"
+> print(paste("BG-Average/Median Passing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="BG" & variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="BG" & variable=="Passing")$value,na.rm = TRUE)))
+[1] "BG-Average/Median Passing Conditional Accuracy : 0.982113674528153 1"
+> print(paste("BG-Average/Median Labelling Effort :",mean(subset(labelling_effort,gen_level=="BG" & variable=="No. Labels")$number,na.rm=TRUE),median(subset(labelling_effort,gen_level=="BG" & variable=="No. Labels")$number,na.rm = TRUE)))
+[1] "BG-Average/Median Labelling Effort : 17.246244735803 10.4807692307692"
+> 
+> print(paste("HSC-Average/Median Overall Prediction Accuracy :",mean(subset(oracle_quality,gen_level=="HSC" & variable=="Overall")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="HSC" & variable=="Overall")$value,na.rm = TRUE)))
+[1] "HSC-Average/Median Overall Prediction Accuracy : 0.696267548897535 0.729166666666667"
+> print(paste("HSC-Average/Median Failing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="HSC" & variable=="Failing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="HSC" & variable=="Failing")$value,na.rm = TRUE)))
+[1] "HSC-Average/Median Failing Conditional Accuracy : 0.419848942086029 0.302222222222222"
+> print(paste("HSC-Average/Median Passing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="HSC" & variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="HSC" & variable=="Passing")$value,na.rm = TRUE)))
+[1] "HSC-Average/Median Passing Conditional Accuracy : 0.950030368962228 1"
+> print(paste("HSC-Average/Median Labelling Effort :",mean(subset(labelling_effort,gen_level=="HSC" & variable=="No. Labels")$number,na.rm=TRUE),median(subset(labelling_effort,gen_level=="HSC" & variable=="No. Labels")$number,na.rm = TRUE)))
+[1] "HSC-Average/Median Labelling Effort : 19.1108323897607 12"
+> 
+> print(paste("CCF-Average/Median Overall Prediction Accuracy :",mean(subset(oracle_quality,gen_level=="CCF" & variable=="Overall")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="CCF" & variable=="Overall")$value,na.rm = TRUE)))
+[1] "CCF-Average/Median Overall Prediction Accuracy : 0.816941189206856 0.885413663360627"
+> print(paste("CCF-Average/Median Failing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="CCF" & variable=="Failing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="CCF" & variable=="Failing")$value,na.rm = TRUE)))
+[1] "CCF-Average/Median Failing Conditional Accuracy : 0.755960917334928 0.875"
+> print(paste("CCF-Average/Median Passing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="CCF" & variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="CCF" & variable=="Passing")$value,na.rm = TRUE)))
+[1] "CCF-Average/Median Passing Conditional Accuracy : 0.807835485071491 0.984090909090909"
+> print(paste("CCF-Average/Median Labelling Effort :",mean(subset(labelling_effort,gen_level=="CCF" & variable=="No. Labels")$number,na.rm=TRUE),median(subset(labelling_effort,gen_level=="CCF" & variable=="No. Labels")$number,na.rm = TRUE)))
+[1] "CCF-Average/Median Labelling Effort : 37.946896231389 31.984375"
+> 
+> print(paste("GE-Average/Median Overall Prediction Accuracy :",mean(subset(oracle_quality,gen_level=="GE" & variable=="Overall")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GE" & variable=="Overall")$value,na.rm = TRUE)))
+[1] "GE-Average/Median Overall Prediction Accuracy : 0.814856041907508 0.916118421052632"
+> print(paste("GE-Average/Median Failing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="GE" & variable=="Failing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GE" & variable=="Failing")$value,na.rm = TRUE)))
+[1] "GE-Average/Median Failing Conditional Accuracy : 0.816592024508556 0.96875"
+> print(paste("GE-Average/Median Passing Conditional Accuracy :",mean(subset(oracle_quality,gen_level=="GE" & variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,gen_level=="GE" & variable=="Passing")$value,na.rm = TRUE)))
+[1] "GE-Average/Median Passing Conditional Accuracy : 0.762717356717462 0.963624338624339"
+> print(paste("GE-Average/Median Labelling Effort :",mean(subset(labelling_effort,gen_level=="GE" & variable=="No. Labels")$number,na.rm=TRUE),median(subset(labelling_effort,gen_level=="GE" & variable=="No. Labels")$number,na.rm = TRUE)))
+[1] "GE-Average/Median Labelling Effort : 52.5202991036781 42"

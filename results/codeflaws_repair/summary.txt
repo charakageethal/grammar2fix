@@ -1,0 +1,7 @@
+[1] "Average/Median repairabiilty manual:  0.404616013071895 0.405228758169935"
+> print(paste("Average/Median repairabiilty autogen: ",mean(subset(patch_quality,variable=="Autogen")$value,na.rm=TRUE),median(subset(patch_quality,variable=="Autogen")$value,na.rm=TRUE)))
+[1] "Average/Median repairabiilty autogen:  0.398897058823529 0.398692810457516"
+> print(paste("Average/Median Passing manual validation score: ", mean(subset(patch_quality_1, variable == "Manual")$value,na.rm =TRUE),median(subset(patch_quality_1,variable == "Manual")$value,na.rm =TRUE)))
+[1] "Average/Median Passing manual validation score:  0.840888576066074 0.891176470588235"
+> print(paste("Average/Median Passing autogen validation score: ", mean(subset(patch_quality_1, variable == "Autogen")$value,na.rm =TRUE),median(subset(patch_quality_1,variable == "Autogen")$value,na.rm =TRUE)))
+[1] "Average/Median Passing autogen validation score:  0.853727154302998 1"
