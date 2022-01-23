@@ -181,7 +181,7 @@ for i_tcase_label in range(len(test_case_labels)):
             n_pass_correct+=1
 
 
-print(bug_dir.split('/')[-3]+","+bug_dir.split('/')[-2]+","+bug_dir.split('/')[-1]+","+str(iteration)+","+str(len(test_case_labels))+","+str(n_correct)+","+str(n_fail)+","+str(n_fail_correct)+","+str(n_pass)+","+str(n_pass_correct)+","+str(n_human_labelled))
+print(bug_dir.split('/')[-4]+","+bug_dir.split('/')[-3]+","+bug_dir.split('/')[-2]+","+str(iteration)+","+str(len(test_case_labels))+","+str(n_correct)+","+str(n_fail)+","+str(n_fail_correct)+","+str(n_pass)+","+str(n_pass_correct)+","+str(n_human_labelled))
 
         
 
