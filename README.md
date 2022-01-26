@@ -48,14 +48,16 @@ tar -zxf codeflaws.tar.gz
 cd ~
 ```
 ## Step 2- Run GRAMMAR2FIX on the benchmarks
-Copy the GRAMMAR2FIX repository to the machine execute the following scripts.
-
+Copy the GRAMMAR2FIX repository to the machine and execute the following scripts.
 ```
 cd grammar2fix
 ./quixbugs_experiments.sh <<path to QuixBugs>>
 ./introclass_experiments.sh <<path to IntroClass>>
 ./codeflaws_experiments.sh <<path to Codeflaws>>
 ```
+The .csv files are copied to the grammar2fix/results folder
+## Step 3-Reproduce the results
+Go to the grammar2fix results folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
 
 ## Setup GenProg
 ```
