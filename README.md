@@ -61,9 +61,45 @@ The .csv files are copied to the grammar2fix/results folder
 Go to the grammar2fix results folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
 
 ## Running Program Repair experiments with codeflaws.
-[Goto step 1](#step-1--install-benckmarks)
-## Setup GenProg
+### Step 1-Install Codeflaws with GenProg
+Setup a docker container for GenProg repair tool
 ```
 docker pull squareslab/genprog
 docker run -it squareslab/genprog /bin/bash
 ```
+Download and setup any dependencies
+
+```
+apt-get update
+apt-get -y install git time build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget z3 bc
+
+# Install python
+pushd /tmp
+wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+tar -xf Python-3.7.2.tar.xz
+cd Python-3.7.2
+./configure --enable-optimizations
+make -j4
+make altinstall
+ln -s $(which pip3.7) /usr/bin/pip
+mv /usr/bin/python /usr/bin/python.old
+ln -s $(which python3.7) /usr/bin/python
+popd
+
+# Set the path for cilly compiler
+export PATH=/root/.opam/system/bin/:$PATH
+```
+Download and set up the Codeflaws benchmark inside the container
+
+```
+cd /root
+git clone https://github.com/codeflaws/codeflaws
+cd codeflaws/all-script
+wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
+tar -zxf codeflaws.tar.gz
+```
+### Step 2 - Run GRAMMAR2FIX on Codeflaws
+
+[Goto step 1](#step-1--install-benckmarks)
+
+
