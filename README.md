@@ -61,6 +61,7 @@ The .csv files are copied to the grammar2fix/results folder
 Go to the grammar2fix results folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
 
 ## Running Program Repair experiments with codeflaws.
+[Goto step 1](#step-1--install-benckmarks)
 ## Setup GenProg
 ```
 docker pull squareslab/genprog
