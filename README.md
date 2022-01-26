@@ -11,7 +11,7 @@ GenProg (<a href="https://ieeexplore.ieee.org/document/6035728">Paper</a>, <a hr
 
 # How to run GRAMMAR2FIX
 
-To repat the experiments related to oracle accuracy and labelling effort, GRAMMAR2FIX needs Python 3.7.2 or greater. If it is not available, use the following commands to install it in linux.
+To repat the experiments related to oracle accuracy and labelling effort, GRAMMAR2FIX needs Python 3.7.2 or greater. Also, "git" and "wget" are necessary. If these are not available, use the following commands to install it in linux.
 
 ```
 apt-get update
