@@ -10,6 +10,7 @@ GRAMMAR2FIX is implemented in Python. The following benchmarks are used in the e
 GenProg (<a href="https://ieeexplore.ieee.org/document/6035728">Paper</a>, <a href="https://github.com/squaresLab/genprog-code">Tool</a>) is used as the automated program repair tool.
 
 # How to run GRAMMAR2FIX
+## Running the experiments of oracle accuracy and labelling effort.
 
 To repat the experiments related to oracle accuracy and labelling effort, GRAMMAR2FIX needs Python 3.7.2 or greater. Also, "git" and "wget" are necessary. If these are not available, use the following commands to install it in linux.
 
@@ -28,7 +29,7 @@ mv /usr/bin/python /usr/bin/python.old
 ln -s $(which python3.7) /usr/bin/python
 popd
 ```
-## Step 1- Install benckmarks
+### Step 1- Install benckmarks
 Download and install benchmarks as follows. 
 ```
 # Install QuixBugs
@@ -47,7 +48,7 @@ wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
 tar -zxf codeflaws.tar.gz
 cd ~
 ```
-## Step 2- Run GRAMMAR2FIX on the benchmarks
+### Step 2- Run GRAMMAR2FIX on the benchmarks
 Copy the GRAMMAR2FIX repository to the machine and execute the following scripts.
 ```
 cd grammar2fix
@@ -56,7 +57,7 @@ cd grammar2fix
 ./codeflaws_experiments.sh <<path to Codeflaws>>
 ```
 The .csv files are copied to the grammar2fix/results folder
-## Step 3-Reproduce the results
+### Step 3-Reproduce the results
 Go to the grammar2fix results folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
 
 ## Setup GenProg
