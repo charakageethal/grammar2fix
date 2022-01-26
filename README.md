@@ -99,7 +99,12 @@ wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
 tar -zxf codeflaws.tar.gz
 ```
 ### Step 2 - Run GRAMMAR2FIX on Codeflaws
-
-[Goto step 1](#step-1--install-benckmarks)
-
+Download GRAMMAR2FIX repository to the /root directory of the container. Run the following scripts
+```
+cd grammar2fix
+./codeflaws_repair_experiments.sh <<path to codeflaws>>
+# Default path: /root/codeflaws/all-script/codeflaws
+```
+### Step 3 - Reproduce program repair results
+Go to grammar2fix/results/codeflaws_repair and run "codeflaws_repair.R"
 
