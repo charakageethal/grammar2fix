@@ -3,9 +3,9 @@ GRAMMAR2FIX is an active oracle learning technique for programs taking string in
 
 GRAMMAR2FIX is implemented in Python. The following benchmarks are used in the experiments.
 
-* <a href="https://github.com/jkoppel/QuixBugs">QuixBugs</a>
-* <a href="https://github.com/ProgramRepair/IntroClass">IntroClass</a>
-* <a href="https://github.com/codeflaws/codeflaws">Codeflaws</a>
+* [QuixBugs](https://github.com/jkoppel/QuixBugs "QuixBugs")
+* [IntroClass](https://github.com/ProgramRepair/IntroClass "IntroClass")
+* [Codeflaws](https://github.com/codeflaws/codeflaws "Codeflaws")
 
 GenProg (<a href="https://ieeexplore.ieee.org/document/6035728">Paper</a>, <a href="https://github.com/squaresLab/genprog-code">Tool</a>) is used as the automated program repair tool.
 
