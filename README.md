@@ -29,8 +29,24 @@ ln -s $(which python3.7) /usr/bin/python
 popd
 ```
 ## Step 1- Install benckmarks
+Download and install benchmarks as follows. 
+```
+# Install QuixBugs
+git clone https://github.com/jkoppel/QuixBugs
 
+# Install IntroClass
+git clone https://github.com/ProgramRepair/IntroClass
+cd IntroClass
+make
+cd ~
 
+# Install Codeflaws
+git clone https://github.com/codeflaws/codeflaws
+cd codeflaws/all-script
+wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
+tar -zxf codeflaws.tar.gz
+cd ~
+```
 ## Setup GenProg
 ```
 docker pull squareslab/genprog
