@@ -47,6 +47,16 @@ wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
 tar -zxf codeflaws.tar.gz
 cd ~
 ```
+## Step 2- Run GRAMMAR2FIX on the benchmarks
+Copy the GRAMMAR2FIX repository to the machine execute the following scripts.
+
+```
+cd grammar2fix
+./quixbugs_experiments.sh <<path to QuixBugs>>
+./introclass_experiments.sh <<path to IntroClass>>
+./codeflaws_experiments.sh <<path to Codeflaws>>
+```
+
 ## Setup GenProg
 ```
 docker pull squareslab/genprog
