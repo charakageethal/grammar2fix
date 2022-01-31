@@ -14,7 +14,7 @@ compute_mean_codeflaws=function(data,filename){
     return(mean_data)
   }
   
-  mean_data=data.frame("subject"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"n_labelled"=numeric())
+  mean_data=data.frame("subject"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"incorrect_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"incorrect_v_pass"=numeric(),"n_labelled"=numeric())
   
   for(Subject in levels(factor(data$V1)))
   {
@@ -23,8 +23,10 @@ compute_mean_codeflaws=function(data,filename){
     correct_v=0
     total_v_fail=0
     correct_v_fail=0
+    incorrect_v_fail=0
     total_v_pass=0
     correct_v_pass=0
+    incorrect_v_pass=0
     totalnLabelled=0
     Runs=0
     
@@ -39,8 +41,10 @@ compute_mean_codeflaws=function(data,filename){
         correct_v=correct_v+specific_run$V4
         total_v_fail=total_v_fail+specific_run$V5
         correct_v_fail=correct_v_fail+specific_run$V6
+        incorrect_v_fail=incorrect_v_fail+(specific_run$V5-specific_run$V6)
         total_v_pass=total_v_pass+specific_run$V7
         correct_v_pass=correct_v_pass+specific_run$V8
+        incorrect_v_pass=incorrect_v_pass+(specific_run$V7-specific_run$V8)
         totalnLabelled=totalnLabelled+specific_run$V9
       }
       
@@ -51,8 +55,10 @@ compute_mean_codeflaws=function(data,filename){
                                             correct_v=correct_v/Runs,
                                             total_v_fail=total_v_fail/Runs,
                                             correct_v_fail=correct_v_fail/Runs,
+                                            incorrect_v_fail=incorrect_v_fail/Runs,
                                             total_v_pass=total_v_pass/Runs,
                                             correct_v_pass=correct_v_pass/Runs,
+                                            incorrect_v_pass=incorrect_v_pass/Runs,
                                             n_labelled=totalnLabelled/Runs
     ))
     
@@ -76,7 +82,7 @@ compute_mean_introclass=function(data,filename){
     return(mean_data)
   }
   
-  mean_data=data.frame("main_sub"=character(),"subject"=character(),"version"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"n_labelled"=numeric())
+  mean_data=data.frame("main_sub"=character(),"subject"=character(),"version"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"incorrect_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"incorrect_v_pass"=numeric(),"n_labelled"=numeric())
   
   for(m_sub in levels(factor(data$V1)))
   {
@@ -88,8 +94,10 @@ compute_mean_introclass=function(data,filename){
         correct_v=0
         total_v_fail=0
         correct_v_fail=0
+        incorrect_v_fail=0
         total_v_pass=0
         correct_v_pass=0
+        incorrect_v_pass=0
         totalnLabelled=0
         Runs=0
         
@@ -104,8 +112,10 @@ compute_mean_introclass=function(data,filename){
             correct_v=correct_v+specific_run$V6
             total_v_fail=total_v_fail+specific_run$V7
             correct_v_fail=correct_v_fail+specific_run$V8
+            incorrect_v_fail=incorrect_v_fail+(specific_run$V7-specific_run$V8)
             total_v_pass=total_v_pass+specific_run$V9
             correct_v_pass=correct_v_pass+specific_run$V10
+            incorrect_v_pass=incorrect_v_pass+(specific_run$V9-specific_run$V10)
             totalnLabelled=totalnLabelled+specific_run$V11
           }
           
@@ -118,8 +128,10 @@ compute_mean_introclass=function(data,filename){
                                                 correct_v=correct_v/Runs,
                                                 total_v_fail=total_v_fail/Runs,
                                                 correct_v_fail=correct_v_fail/Runs,
+                                                incorrect_v_fail=incorrect_v_fail/Runs,
                                                 total_v_pass=total_v_pass/Runs,
                                                 correct_v_pass=correct_v_pass/Runs,
+                                                incorrect_v_pass=incorrect_v_pass/Runs,
                                                 n_labelled=totalnLabelled/Runs
         ))
         
@@ -145,7 +157,7 @@ compute_mean_quixbugs=function(data,filename){
     return(mean_data)
   }
   
-  mean_data=data.frame("subject"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"n_labelled"=numeric())
+  mean_data=data.frame("subject"=character(),"total_v"=numeric(),"correct_v"=numeric(),"total_v_fail"=numeric(),"correct_v_fail"=numeric(),"incorrect_v_fail"=numeric(),"total_v_pass"=numeric(),"correct_v_pass"=numeric(),"incorrect_v_pass"=numeric(),"n_labelled"=numeric())
   
   for(Subject in levels(factor(data$V1)))
   {
@@ -154,8 +166,10 @@ compute_mean_quixbugs=function(data,filename){
     correct_v=0
     total_v_fail=0
     correct_v_fail=0
+    incorrect_v_fail=0
     total_v_pass=0
     correct_v_pass=0
+    incorrect_v_pass=0
     totalnLabelled=0
     Runs=0
     
@@ -170,8 +184,10 @@ compute_mean_quixbugs=function(data,filename){
         correct_v=correct_v+specific_run$V4
         total_v_fail=total_v_fail+specific_run$V5
         correct_v_fail=correct_v_fail+specific_run$V6
+        incorrect_v_fail=incorrect_v_fail+(specific_run$V5-specific_run$V6)
         total_v_pass=total_v_pass+specific_run$V7
         correct_v_pass=correct_v_pass+specific_run$V8
+        incorrect_v_pass=incorrect_v_pass+(specific_run$V7-specific_run$V8)
         totalnLabelled=totalnLabelled+specific_run$V9
       }
       
@@ -182,8 +198,10 @@ compute_mean_quixbugs=function(data,filename){
                                             correct_v=correct_v/Runs,
                                             total_v_fail=total_v_fail/Runs,
                                             correct_v_fail=correct_v_fail/Runs,
+                                            incorrect_v_fail=incorrect_v_fail/Runs,
                                             total_v_pass=total_v_pass/Runs,
                                             correct_v_pass=correct_v_pass/Runs,
+                                            incorrect_v_pass=incorrect_v_pass/Runs,
                                             n_labelled=totalnLabelled/Runs
     ))
     
@@ -225,8 +243,10 @@ for(m_sub in levels(factor(mean_data$main_sub))){
       tmp_sub_name=paste(m_sub,Subject,ver,sep="_")
       
       oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Overall", value=sp_ins$correct_v/sp_ins$total_v))
-      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
-      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Recall-Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
+      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Recall-Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Precision-Failing", value=sp_ins$correct_v_fail/(sp_ins$correct_v_fail+sp_ins$incorrect_v_pass)))
+      oracle_quality <- rbind(oracle_quality,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="Precision-Passing", value=sp_ins$correct_v_pass/(sp_ins$correct_v_pass+sp_ins$incorrect_v_fail)))
       
       labelling_effort <- rbind(labelling_effort,data.frame(subject=tmp_sub_name,benchmark="IntroClass",variable="No. Labels",number=sp_ins$n_labelled))
     }
@@ -248,8 +268,11 @@ for(Subject in levels(factor(mean_data$subject)))
   sp_ins=subset(mean_data,subject==Subject)
   
   oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Overall", value=sp_ins$correct_v/sp_ins$total_v))
-  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
-  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Recall-Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Recall-Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Precision-Failing", value=sp_ins$correct_v_fail/(sp_ins$correct_v_fail+sp_ins$incorrect_v_pass)))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="QuixBugs",variable="Precision-Passing", value=sp_ins$correct_v_pass/(sp_ins$correct_v_pass+sp_ins$incorrect_v_fail)))
+  
   labelling_effort <- rbind(labelling_effort,data.frame(subject=Subject,benchmark="QuixBugs",variable="No. Labels",number=sp_ins$n_labelled))
   
 }
@@ -270,8 +293,10 @@ for(Subject in levels(factor(mean_data$subject)))
   sp_ins=subset(mean_data,subject==Subject)
   
   oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Overall", value=sp_ins$correct_v/sp_ins$total_v))
-  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
-  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Recall-Failing", value=sp_ins$correct_v_fail/sp_ins$total_v_fail))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Recall-Passing", value=sp_ins$correct_v_pass/sp_ins$total_v_pass))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Precision-Failing", value=sp_ins$correct_v_fail/(sp_ins$correct_v_fail+sp_ins$incorrect_v_pass)))
+  oracle_quality <- rbind(oracle_quality,data.frame(subject=Subject,benchmark="Codeflaws",variable="Precision-Passing", value=sp_ins$correct_v_pass/(sp_ins$correct_v_pass+sp_ins$incorrect_v_fail)))
   labelling_effort <- rbind(labelling_effort,data.frame(subject=Subject,benchmark="Codeflaws",variable="No. Labels",number=sp_ins$n_labelled))
   
 }
@@ -299,8 +324,13 @@ ggsave(filename = "Overall_accuracy_benchmarks.pdf", width=8,height=4.2,scale=0.
 
 print(paste("Average/Median predication accuracy",mean(subset(oracle_quality,variable=="Overall")$value),median(subset(oracle_quality,variable=="Overall")$value)))
 
-print(paste("Average/Median failing conditional accuracy",mean(subset(oracle_quality,variable=="Failing")$value),median(subset(oracle_quality,variable=="Failing")$value)))
+print(paste("Average/Median Recall-Failing",mean(subset(oracle_quality,variable=="Recall-Failing")$value),median(subset(oracle_quality,variable=="Recall-Failing")$value)))
 
-print(paste("Average/Median passing conditional accuracy",mean(subset(oracle_quality,variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Passing")$value,na.rm = TRUE)))
+print(paste("Average/Median Recall-Passing",mean(subset(oracle_quality,variable=="Recall-Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Recall-Passing")$value,na.rm = TRUE)))
+
+print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variable=="Precision-Failing")$value),median(subset(oracle_quality,variable=="Precision-Failing")$value)))
+
+print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm = TRUE)))
+
 
 print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels")$number),median(subset(labelling_effort,variable=="No. Labels")$number)))

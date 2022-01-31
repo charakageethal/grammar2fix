@@ -1,12 +1,18 @@
 > print(paste("Average/Median predication accuracy",mean(subset(oracle_quality,variable=="Overall")$value),median(subset(oracle_quality,variable=="Overall")$value)))
 [1] "Average/Median predication accuracy 0.814856041907508 0.916118421052632"
 > 
-> print(paste("Average/Median failing conditional accuracy",mean(subset(oracle_quality,variable=="Failing")$value),median(subset(oracle_quality,variable=="Failing")$value)))
-[1] "Average/Median failing conditional accuracy 0.816592024508556 0.96875"
+> print(paste("Average/Median Recall-Failing",mean(subset(oracle_quality,variable=="Recall-Failing")$value),median(subset(oracle_quality,variable=="Recall-Failing")$value)))
+[1] "Average/Median Recall-Failing 0.816592024508556 0.96875"
 > 
-> print(paste("Average/Median passing conditional accuracy",mean(subset(oracle_quality,variable=="Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Passing")$value,na.rm = TRUE)))
-[1] "Average/Median passing conditional accuracy 0.762717356717462 0.963624338624339"
+> print(paste("Average/Median Recall-Passing",mean(subset(oracle_quality,variable=="Recall-Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Recall-Passing")$value,na.rm = TRUE)))
+[1] "Average/Median Recall-Passing 0.762717356717462 0.963624338624339"
+> 
+> print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variable=="Precision-Failing")$value),median(subset(oracle_quality,variable=="Precision-Failing")$value)))
+[1] "Average/Median Precision-Failing 0.734993408479051 1"
+> 
+> print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm = TRUE)))
+[1] "Average/Median Precision-Passing 0.839256251011495 0.941176470588235"
+> 
 > 
 > print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels")$number),median(subset(labelling_effort,variable=="No. Labels")$number)))
 [1] "Average/Median failing labelling effort 52.5202991036781 42"
-> 
