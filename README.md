@@ -10,7 +10,7 @@ GRAMMAR2FIX is implemented in Python. The following benchmarks are used in the e
 GenProg (<a href="https://ieeexplore.ieee.org/document/6035728">Paper</a>, <a href="https://github.com/squaresLab/genprog-code">Tool</a>) is used as the automated program repair tool.
 
 # How to run GRAMMAR2FIX
-## Running the experiments of oracle accuracy and labelling effort.
+## Running the experiments to measure oracle accuracy and labelling effort of GRAMMAR2FIX.
 
 To repat the experiments related to oracle accuracy and labelling effort, GRAMMAR2FIX needs Python 3.7.2 or greater. Also, "git" and "wget" are necessary. If these are not available, use the following commands to install it in linux.
 
