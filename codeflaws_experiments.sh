@@ -54,7 +54,7 @@ for gen in "${gen_steps[@]}"; do
 				
 
 
-		         for i in $(seq 1 32); do
+		         for i in $(seq 1  $(nproc --all)); do
 		         (
 		                autotest=$(timeout 15m python Codeflaws_$gen.py -s $subject -p $codeflaws_dir -i $i)
 		    

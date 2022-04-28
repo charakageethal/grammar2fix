@@ -17,7 +17,7 @@ buggy_subs=("lcs_length" "longest_common_subsequence" "levenshtein" "is_valid_pa
 for gen in "${gen_steps[@]}"; do
 	for sub in "${buggy_subs[@]}"; do
 
-		for i in $(seq 1 32); do
+		for i in $(seq 1  $(nproc --all)); do
 		(
 			autotest=$(timeout 15m python QuixBugs_$gen.py -s $sub -p $1 -i $i)
 

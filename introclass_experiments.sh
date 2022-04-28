@@ -40,7 +40,7 @@ for gen in "${gen_steps[@]}"; do
 				v=$(echo $v | rev | cut -d/ --complement -f3,5 | rev)
 				gcc -Wall -fno-stack-protector $v$sub.c -o $v$sub
 
-				for i in $(seq 1 32); do
+				for i in $(seq 1  $(nproc --all)); do
 				(
 
 				    autotest=$(timeout 15m python Introclass_$gen.py -s $v -g $golden_dir -i $i)
