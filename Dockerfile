@@ -18,6 +18,10 @@ RUN ln -s $(which python3.7) /usr/bin/python
 
 RUN cd /root
 
+#install numpy
+
+RUN pip install numpy
+
 
 #install grammar2fix
 
