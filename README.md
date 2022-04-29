@@ -18,8 +18,8 @@ To repat the experiments related to oracle accuracy and labelling effort, GRAMMA
 
 ```
 apt-get update
-apt-get -y install git wget
-pushd \tmp
+apt-get -y install git wget build-essential
+pushd /tmp
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
 tar -xf Python-3.7.2.tar.xz
 cd Python-3.7.2
