@@ -2,29 +2,22 @@ FROM ubuntu:18.04
 
 RUN apt-get -y update
 
-RUN apt-get -y install git wget
+RUN apt-get -y install git wget build-essential time zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
 
-RUN pushd \tmp
+RUN cd /tmp
 
 RUN wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
 
 RUN tar -xf Python-3.7.2.tar.xz
 
-RUN cd Python-3.7.2
-
-RUN ./configure --enable-optimizations
-
-RUN make -j4
-
-RUN make altinstall
+RUN cd Python-3.7.2 && ./configure --enable-optimizations && make -j4 && make altinstall
 
 RUN ln -s $(which pip3.7) /usr/bin/pip
 
-RUN mv /usr/bin/python /usr/bin/python.old
-
 RUN ln -s $(which python3.7) /usr/bin/python
 
-RUN popd
+RUN cd /root
+
 
 #install grammar2fix
 
