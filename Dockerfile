@@ -20,6 +20,8 @@ RUN cd /root
 
 #install numpy
 
+RUN apt-get -y update
+
 RUN pip install numpy
 
 
