@@ -18,7 +18,7 @@ To repat the experiments related to oracle accuracy and labelling effort, GRAMMA
 
 ```
 apt-get update
-apt-get -y install git wget build-essential
+apt-get -y install git wget build-essential time zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
 pushd /tmp
 wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
 tar -xf Python-3.7.2.tar.xz
