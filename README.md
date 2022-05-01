@@ -25,19 +25,11 @@ grammar2fix
 ├── DFA_Grammar
 │   ├── DFAparser.py
 │   ├── DFA.py
-│   ├── __pycache__
-│   │   ├── DFA.cpython-37.pyc
-│   │   ├── DFAparser.cpython-37.pyc
-│   │   └── State.cpython-37.pyc
 │   └── State.py
 ├── Dockerfile
 ├── Drivers
 │   ├── CodeflawsDriver.py
 │   ├── IntroClassDriver.py
-│   ├── __pycache__
-│   │   ├── CodeflawsDriver.cpython-37.pyc
-│   │   ├── IntroClassDriver.cpython-37.pyc
-│   │   └── QuixbugsDriver.cpython-37.pyc
 │   └── QuixbugsDriver.py
 ├── Introclass_BG.py
 ├── Introclass_CCF.py
@@ -46,11 +38,6 @@ grammar2fix
 ├── Introclass_GI.py
 ├── Introclass_HSC.py
 ├── intro_class_run.script
-├── __pycache__
-│   ├── CharacterFuzz.cpython-37.pyc
-│   ├── DeltaMinimize.cpython-37.pyc
-│   ├── GenFuzzer.cpython-37.pyc
-│   └── HSCFuzzer.cpython-37.pyc
 ├── QuixBugs_BG.py
 ├── QuixBugs_CCF.py
 ├── QuixBugs_experiments.script
@@ -62,8 +49,6 @@ grammar2fix
 ├── README.md
 ├── repairs
 │   └── genprog
-│       ├── __pycache__
-│       │   └── CodeflawDriver.cpython-37.pyc
 │       ├── run-version-genprog.sh
 │       ├── test_genprog_grammar.py
 │       └── validate-fix-genprog.sh
