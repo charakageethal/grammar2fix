@@ -219,4 +219,5 @@ cd grammar2fix
 ### Step 3 - Reproduce program repair results
 Go to grammar2fix/results/codeflaws_repair and run "codeflaws_repair.R"
 
+## Running experiments through Dockerfile
 
