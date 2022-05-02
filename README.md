@@ -115,7 +115,7 @@ grammar2fix
 ```
 
 # How to run GRAMMAR2FIX
-## Running the experiments to measure oracle accuracy and labelling effort of GRAMMAR2FIX.
+## <a id="basic_expr"/>Running the experiments to measure oracle accuracy and labelling effort of GRAMMAR2FIX.
 
 To repat the experiments related to oracle accuracy and labelling effort, GRAMMAR2FIX needs Python 3.7.2 or greater. Also, "git", "numpy" and "wget" are necessary. If these are not available, use the following commands to install it in linux.
 
@@ -159,7 +159,7 @@ wget http://www.comp.nus.edu.sg/~release/codeflaws/codeflaws.tar.gz
 tar -zxf codeflaws.tar.gz
 cd ~
 ```
-### Step 2- Run GRAMMAR2FIX on the benchmarks
+### <a id="expr_runs"/> Step 2- Run GRAMMAR2FIX on the benchmarks
 Copy the GRAMMAR2FIX repository to the machine and execute the following scripts.
 ```
 cd grammar2fix
@@ -220,4 +220,16 @@ cd grammar2fix
 Go to grammar2fix/results/codeflaws_repair and run "codeflaws_repair.R"
 
 ## Running experiments through Dockerfile
+We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile
+
+```
+sudo docker build -t <<docker_container_name>> .
+```
+
+The docker file will download the benchmarks to the "/root". Use the following command to run the docker container.
+
+```
+sudo docker run -it <<docker_container_name>> /bin/bash
+```
+After that run the experiment scripts as previously ([See Above](#expr_runs))
 
