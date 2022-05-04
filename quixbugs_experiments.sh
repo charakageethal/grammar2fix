@@ -17,6 +17,8 @@ buggy_subs=("lcs_length" "longest_common_subsequence" "levenshtein" "is_valid_pa
 for gen in "${gen_steps[@]}"; do
 	for sub in "${buggy_subs[@]}"; do
 
+		echo "[INFO] Running subject:$sub in $gen"
+
 		for i in $(seq 1  $(nproc --all)); do
 		(
 			autotest=$(timeout 15m python QuixBugs_$gen.py -s $sub -p $1 -i $i)
@@ -29,6 +31,8 @@ for gen in "${gen_steps[@]}"; do
 		)>> results/$gen/results_q_${gen}_$i.csv &		 
 		done
 		wait
+
+		echo "[INFO] $sub in $gen completed...."
 	done
 	cat results/$gen/results_q_${gen}_*.csv > results/$gen/results_quixbugs.csv
 done

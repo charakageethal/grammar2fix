@@ -36,6 +36,7 @@ for gen in "${gen_steps[@]}"; do
 				    continue
 				fi
 
+				echo "[INFO] Running subject:$v of $s in $gen"
 
 				v=$(echo $v | rev | cut -d/ --complement -f3,5 | rev)
 				gcc -Wall -fno-stack-protector $v$sub.c -o $v$sub
@@ -52,6 +53,9 @@ for gen in "${gen_steps[@]}"; do
 
 		       done
 		      wait
+
+		      echo "[INFO] $v of $s in $gen completed..."
+
 		    done
 
 		done

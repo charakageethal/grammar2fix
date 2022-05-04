@@ -52,7 +52,7 @@ for gen in "${gen_steps[@]}"; do
 				fi
 
 				
-
+				echo "[INFO] Running subject:$subject in $gen"
 
 		         for i in $(seq 1  $(nproc --all)); do
 		         (
@@ -67,7 +67,7 @@ for gen in "${gen_steps[@]}"; do
 		         done
 		          wait
 		       
-
+		        echo "[INFO] $subject in $gen completed...."
 
 			else
 				echo "Skipping numeric inputs:$s" 1>&2	
