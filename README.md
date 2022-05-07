@@ -66,7 +66,8 @@ cd grammar2fix
 ```
 The .csv files are copied to the grammar2fix/results folder
 ### Step 3-Reproduce the results
-Go to the grammar2fix results folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
+We use [R](https://www.r-project.org/) to generate the graphs. Follow [these instructions](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/) to install R and Rstudio. 
+After that, go to the **results** folder and run "overall_accuracy_benchmarks.R" and "grammar_gen_wise_plots.R". 
 
 ## Running Program Repair experiments with codeflaws.
 ### Step 1-Install Codeflaws with GenProg
