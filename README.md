@@ -92,7 +92,7 @@ docker run -it squareslab/genprog /bin/bash
 ```
 ### Step 2- Setup GRAMMAR2FIX and benchmarks
 
-Repeat the steps in [Getting Started](#getting_started) to setup GRAMMAR2FIX and benchmarks. Download GRAMMAR2FIX repository to the "/root" directory of the docker container.
+Repeat the steps in [Getting Started](#getting_started) to setup GRAMMAR2FIX and Codeflaws in the docker container. Download GRAMMAR2FIX repository to the "/root" directory of the docker container.
 
 ### Step 3 - Run GRAMMAR2FIX on Codeflaws
 Run the script _codeflaws_repair_experiments.sh_ as follows.
