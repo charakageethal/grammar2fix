@@ -59,11 +59,11 @@ tar -zxf codeflaws.tar.gz
 cd ~
 ```
 ## Step 3- Install GRAMMAR2FIX
-
+Clone GRAMMAR2FIX github repository 
 ```
 git clone https://github.com/charakageethal/grammar2fix.git
 ```
-
+GRAMMAR2FIX 
 # How to run GRAMMAR2FIX
 ## <a id="basic_expr"/>Running the experiments to measure oracle accuracy and labelling effort of GRAMMAR2FIX.
 
