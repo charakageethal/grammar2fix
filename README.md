@@ -95,13 +95,13 @@ docker run -it squareslab/genprog /bin/bash
 Repeat the steps in [Getting Started](#getting_started) to setup GRAMMAR2FIX and Codeflaws in the docker container. Download GRAMMAR2FIX repository to the "/root" directory of the docker container.
 
 ### Step 3 - Run GRAMMAR2FIX on Codeflaws
-Run the script _codeflaws_repair_experiments.sh_ as follows.
+Run the script _"codeflaws_repair_experiments.sh"_ as follows.
 ```
 cd grammar2fix
 ./codeflaws_repair_experiments.sh <<path to codeflaws>>
 ```
 ### Step 4 - Reproduce program repair results
-Go to grammar2fix/results/codeflaws_repair and run "codeflaws_repair.R"
+Go to grammar2fix/results/codeflaws_repair and run _"codeflaws_repair.R"_
 
 ## Running experiments through Dockerfile
 We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile
