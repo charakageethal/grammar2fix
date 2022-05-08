@@ -105,15 +105,17 @@ Go to grammar2fix/results/codeflaws_repair and run _"codeflaws_repair.R"_
 
 ## Running experiments through Dockerfile
 We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile
-
 ```
 sudo docker build -t <<docker_container_name>> .
 ```
-
-The docker file will download the benchmarks to the "/root". Use the following command to run the docker container.
-
+Use the following command to run the docker container.
 ```
 sudo docker run -it <<docker_container_name>> /bin/bash
 ```
+The Dockerfile downloads the benchmarks to the following locations.
+* QuixBugs : /root/QuixBugs
+* IntroClass : /root/IntroClass
+* Codeflaws : /root/codeflaws/all-script/codelfaws
+
 After that run the experiment scripts as previously ([See Above](#expr_runs))
 
