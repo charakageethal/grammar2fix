@@ -76,7 +76,7 @@ cd grammar2fix
 ./introclass_experiments.sh <<path to IntroClass>>
 ./codeflaws_experiments.sh <<path to Codeflaws>>
 ```
-The time taken for each script under our setup is as follows.
+The approximate time taken for each script under our setup is as follows.
 
 |Script|Time|
 |:------|:----|
@@ -87,7 +87,7 @@ The time taken for each script under our setup is as follows.
 The .csv files are copied to the grammar2fix/results folder
 ### Step 2-Reproduce the results
 We use [R](https://www.r-project.org/) to generate the graphs. Follow [these instructions](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/) to install R and Rstudio. 
-After that, go to the **results** folder and run _"overall_accuracy_benchmarks.R"_ and _"grammar_gen_wise_plots.R"_. 
+After that, go to the **results** folder and run _"overall_accuracy_benchmarks.R"_ and _"grammar_gen_wise_plots.R"_. _"overall_accuracy_benchmarks.R"_ will generate _Figure 7 (a)_ and _7 (b)_, and _"grammar_gen_wise_plots.R"_ will generate _Figure 8_ and _9_ in the paper.
 
 ## Running Program Repair experiments with codeflaws.
 We use [GenProg docker](https://github.com/squaresLab/genprog-code) to run the program repair experiments. 
@@ -109,8 +109,8 @@ cd grammar2fix
 ./codeflaws_repair_experiments.sh <<path to codeflaws>>
 ```
 ### Step 4 - Reproduce program repair results
-Go to grammar2fix/results/codeflaws_repair and run _"codeflaws_repair.R"_
-
+Go to grammar2fix/results/codeflaws_repair and run _"codeflaws_repair.R"_. This script will generate _Figure 10 (a)_
+ and _10 (b)_.
 ## Running experiments through Dockerfile
 We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile
 ```
