@@ -63,7 +63,7 @@ Clone GRAMMAR2FIX github repository
 ```
 git clone https://github.com/charakageethal/grammar2fix.git
 ```
-
+Under our setup, **Getting Started** step took approximately 35 minutes to complete. 
 # Reproduce Experimental Results
 ## <a id="basic_expr"/>Running the experiments to measure oracle accuracy and labelling effort of GRAMMAR2FIX.
 
