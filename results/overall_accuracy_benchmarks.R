@@ -312,6 +312,18 @@ ggplot(oracle_quality, aes(variable, value)) +
         axis.text.x = element_text(colour = "black"), axis.text.y = element_text(colour = "black"))
 ggsave(filename = "Overall_accuracy_benchmarks.pdf", width=8,height=4.2,scale=0.77)
 
+
+ggplot(oracle_quality, aes(variable, value)) +
+  geom_violin(aes(fill=variable),na.rm = TRUE,scale = "width") +
+  geom_boxplot(width=0.1,outlier.shape = NA) +
+  scale_y_continuous(labels = scales::percent) +
+  facet_grid(~ benchmark)+
+  xlab("") + ylab("Prediction Accuracy") +
+  scale_fill_grey(start = 0.6, end = .9) +
+  theme(legend.position="none", legend.title= element_blank(),
+        axis.text.x = element_text(colour = "black", angle=90, vjust=0.5, hjust=1,size=5), axis.text.y = element_text(colour = "black"))
+ggsave(filename = "Overall_accuracy_benchmarks_wise.pdf", width=8,height=4.2,scale=0.77)
+
 # ggplot(labelling_effort, aes(variable, number)) +
 #   geom_violin(aes(fill=variable),scale = "width") +
 #   geom_boxplot(width=0.1,outlier.shape = NA)+
@@ -332,5 +344,44 @@ print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variab
 
 print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing")$value,na.rm = TRUE)))
 
-
+#Quixbugs
 print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels")$number),median(subset(labelling_effort,variable=="No. Labels")$number)))
+
+print(paste("Average/Median predication accuracy",mean(subset(oracle_quality,variable=="Overall" & benchmark=="QuixBugs")$value),median(subset(oracle_quality,variable=="Overall"  & benchmark=="QuixBugs")$value)))
+
+print(paste("Average/Median Recall-Failing",mean(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="QuixBugs")$value),median(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="QuixBugs")$value)))
+
+print(paste("Average/Median Recall-Passing",mean(subset(oracle_quality,variable=="Recall-Passing"  & benchmark=="QuixBugs")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Recall-Passing" & benchmark=="QuixBugs")$value,na.rm = TRUE)))
+
+print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="QuixBugs")$value),median(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="QuixBugs")$value)))
+
+print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="QuixBugs")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="QuixBugs")$value,na.rm = TRUE)))
+
+print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels"  & benchmark=="QuixBugs")$number),median(subset(labelling_effort,variable=="No. Labels"  & benchmark=="QuixBugs")$number)))
+
+#IntroClass
+print(paste("Average/Median predication accuracy",mean(subset(oracle_quality,variable=="Overall" & benchmark=="IntroClass")$value),median(subset(oracle_quality,variable=="Overall"  & benchmark=="IntroClass")$value)))
+
+print(paste("Average/Median Recall-Failing",mean(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="IntroClass")$value),median(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="IntroClass")$value)))
+
+print(paste("Average/Median Recall-Passing",mean(subset(oracle_quality,variable=="Recall-Passing"  & benchmark=="IntroClass")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Recall-Passing" & benchmark=="IntroClass")$value,na.rm = TRUE)))
+
+print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="IntroClass")$value),median(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="IntroClass")$value)))
+
+print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="IntroClass")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="IntroClass")$value,na.rm = TRUE)))
+
+print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels"  & benchmark=="IntroClass")$number),median(subset(labelling_effort,variable=="No. Labels"  & benchmark=="IntroClass")$number)))
+
+#Codeflaws
+print(paste("Average/Median predication accuracy",mean(subset(oracle_quality,variable=="Overall" & benchmark=="Codeflaws")$value),median(subset(oracle_quality,variable=="Overall"  & benchmark=="Codeflaws")$value)))
+
+print(paste("Average/Median Recall-Failing",mean(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="Codeflaws")$value),median(subset(oracle_quality,variable=="Recall-Failing"  & benchmark=="Codeflaws")$value)))
+
+print(paste("Average/Median Recall-Passing",mean(subset(oracle_quality,variable=="Recall-Passing"  & benchmark=="Codeflaws")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Recall-Passing" & benchmark=="Codeflaws")$value,na.rm = TRUE)))
+
+print(paste("Average/Median Precision-Failing",mean(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="Codeflaws")$value),median(subset(oracle_quality,variable=="Precision-Failing"  & benchmark=="Codeflaws")$value)))
+
+print(paste("Average/Median Precision-Passing",mean(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="Codeflaws")$value,na.rm=TRUE),median(subset(oracle_quality,variable=="Precision-Passing"  & benchmark=="Codeflaws")$value,na.rm = TRUE)))
+
+print(paste("Average/Median failing labelling effort",mean(subset(labelling_effort,variable=="No. Labels"  & benchmark=="Codeflaws")$number),median(subset(labelling_effort,variable=="No. Labels"  & benchmark=="Codeflaws")$number)))
+
