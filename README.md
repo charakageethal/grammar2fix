@@ -76,6 +76,14 @@ cd grammar2fix
 ./introclass_experiments.sh <<path to IntroClass>>
 ./codeflaws_experiments.sh <<path to Codeflaws>>
 ```
+The time taken for each script under our setup is as follows.
+
+|Script|Time|
+|:------|:----|
+|quixbugs_experiments.sh|1 hour 30 minutes|
+|introclass_experiments.sh| 24 hours |
+|codeflaws_experiments.sh| 20 hours |
+
 The .csv files are copied to the grammar2fix/results folder
 ### Step 2-Reproduce the results
 We use [R](https://www.r-project.org/) to generate the graphs. Follow [these instructions](https://computingforgeeks.com/how-to-install-r-and-rstudio-on-ubuntu-debian-mint/) to install R and Rstudio. 
