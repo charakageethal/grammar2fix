@@ -112,7 +112,7 @@ cd grammar2fix
 Go to grammar2fix/results/codeflaws_repair and run _"codeflaws_repair.R"_. This script will generate _Figure 10 (a)_
  and _10 (b)_.
 ## Running experiments through Dockerfile
-We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile
+We have provided a Dockerfile to run the experiments realated to oracle accuracy and labelling effort of GRAMMAR2FIX ([See Above](#basic_expr)). Use the following command to build the docker container from the Dockerfile. Under our setup, it took approximately 45 minutes to build the docker container.
 ```
 sudo docker build -t <<docker_container_name>> .
 ```
